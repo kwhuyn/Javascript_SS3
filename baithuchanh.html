@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+let password = "";
+let count =0;
+let isLoginSuccessfull = false;
+
+do {
+    password = prompt("Vui lòng nhập mật khẩu");
+    if(password !=="admin123"){
+        count++;
+        if (count==3) {
+           console.log("Tài khoản bị khóa"); 
+        }     
+    }else{
+        alert("Đăng nhập thành công");
+        isLoginSuccessfull =true;
+        break;
+    }
+} while (password !== "admin123" && count <3);
+
+if(isLoginSuccessfull){
+    let choice;
+    let quatity;
+    let totalPrice = 0; // tổng tiền
+
+    
+    do{
+        choice = +prompt("Vui lòng nhập lựa chọn")
+        switch (choice) {
+            case 1:
+                quatity = +prompt("Vui lòng nhập số lượng sách");
+
+                for (let i = 1; i < quatity; i++) {
+                    console.log("Nhập giá tiền của cuốn sách");
+                    
+                    
+                }
+
+                break;
+
+            case 2:
+                console.log("Lụa chọn 2");
+                break;
+
+            case 3:
+                console.log("Kết thúc chương trình");
+                break;
+
+            default:
+                console.log("Lụa chọn ko hopwj leej");
+                break;
+    }
+        }while(choice);
+    }
+    </script>
+</body>
+</html>

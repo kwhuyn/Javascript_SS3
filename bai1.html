@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý thư viện</title>
+</head>
+<body>
+    <h1>Danh sách ghi nhận mượn sách</h1>
+    <script>
+
+        let num;
+
+       
+        do {
+            num = parseInt(prompt("Hôm nay có bao nhiêu lượt mượn sách?"));
+        } while (isNaN(num) || num <= 0);
+
+        for (let i = 1; i <= num; i++) {
+
+            console.log(`Lượt mượn : ${i} / ${num}`);
+            
+            const name = prompt(`[Lượt ${i}] Nhập tên người mượn:`);
+            const nameBook = prompt(`[Lượt ${i}] Nhập tên sách:`);
+
+            let dateDay; 
+            do {
+                dateDay = parseInt(prompt(`[Lượt ${i}] Số ngày mượn (1-30):`));
+            } while (isNaN(dateDay) || dateDay < 1 || dateDay > 30);
+
+
+            if (dateDay > 14) {
+                alert(`Lượt ${i}: Cảnh báo: Thời gian mượn vượt quy định (tối đa 14 ngày)`);
+            } else {
+                alert(`Lượt ${i}: Mượn thành công`);
+            }
+        }
+
+        console.log("--------------------------");
+        console.log("THỐNG KÊ CUỐI NGÀY");
+        console.log("Tổng số lượt mượn đã ghi nhận: " + num);
+    </script>
+</body>
+</html>

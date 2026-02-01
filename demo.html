@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Loại vòng lặp biết trước được số lần lặp (for)
+        for (let i = 1; i <= 10; i++) {
+            //sử lý các logic
+            console.log("hello lần thứ:",i);
+            
+        }
+        let i = 1;
+        for(; i <= 10;){
+            console.log("i thứ:",i);
+
+            i++;
+            
+            
+        }
+        //vòng lặp khong biết trc số lần lặp (while, do-while)
+        let num = 1;
+        while (num <=10) {
+            console.log("num =",num);
+            num++;
+            }
+            //yêu cầu người dùng nhập mk cho đến khi mk đúng
+          //ycau ng dùng nhập vào 1 số cho đến khi nó là 1 số nguyên dg
+            // let number = "";
+            // while (number <= 0) {
+            //     number = +prompt("Nhập số:")
+                
+            // }
+            // console.log("số vừa nhập là:",number);
+            
+
+            //do-while
+            let firstNumber = +prompt("Nhập số");
+            do{
+                console.log(firstNumber);
+                firstNumber ++;
+            }while(firstNumber <= 10);
+            //ycau ng dùng nhập nk, ít nhất 1 lần , tối đa 3 lần
+
+            let passWord = "";
+            let count = 0;
+            //logic thực hiện
+            //1. lấy mk từ ng dùng
+            //2. kta mk có sẵn với mk ng dùng nhập vào
+            //2.1 nếu dùng => in ra thông báo thành công
+            //2.2 nếu sai => Tăng count lên 1 lần và ycau nhập lại
+            //2.3 (nếu có): nếu count = 3 thì in thông báo "nhập quá số lần"
+             do {
+                passWord = prompt("Nhập mk:")
+
+                if(passWord != "!234"){
+                    count++;
+                    if(count === 3){
+                        console.log("Nhập quá số lần!!!");
+                        break;
+                        }             
+                }else{
+                    console.log("Đăng nhập thành công!!!");
+                    
+                }
+                
+             } while (passWord != "1234"&& count <= 3);
+
+             //Nâng cao: Vòng lặp lồng nhau
+             // In ra bảng cửu chg 
+             // Xác định: Bảng cửu chương(1 -> 10), số nhân (1 -> 10)
+             for (let i = 1; i <= 10; i++) {
+                console.log("index: ",i);
+                for(let j = 1; j<=10 ; j++)
+                console.log(i + "x" + j + " = ", i*j);
+                
+                
+             }
+    </script>
+</body>
+</html>
